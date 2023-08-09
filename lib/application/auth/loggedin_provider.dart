@@ -16,7 +16,7 @@ class LoggedInNotifier extends ChangeNotifier {
 
   UserModel get user => getUser();
 
-  bool get loggedIn => token.isEmpty && user == UserModel.init() ? false : true;
+  bool get loggedIn => token.isEmpty ? false : true;
 
   LoggedInNotifier(this.ref) : super();
 

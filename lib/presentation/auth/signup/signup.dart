@@ -69,7 +69,7 @@ class SignupScreen extends HookConsumerWidget {
                       style: context.bodyMedium!.copyWith(
                         fontWeight: FontWeight.w400,
                         fontSize: 16,
-                        color: ColorPalate.black,
+                        color: AppColors.black,
                       ),
                     ),
                   ),
@@ -150,7 +150,7 @@ class SignupScreen extends HookConsumerWidget {
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
                       letterSpacing: .02,
-                      color: ColorPalate.black600,
+                      color: AppColors.black600,
                     ),
                   ),
                   gap8,
@@ -178,7 +178,7 @@ class SignupScreen extends HookConsumerWidget {
                           AppStrings.orSignUpWith,
                           textAlign: TextAlign.center,
                           style: context.titleSmall!.copyWith(
-                            color: ColorPalate.black600,
+                            color: AppColors.black600,
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             letterSpacing: 1.50,
@@ -220,7 +220,7 @@ class SignupScreen extends HookConsumerWidget {
                       TextSpan(
                         text: AppStrings.alreadyHaveAccount,
                         style: context.titleSmall!.copyWith(
-                          color: ColorPalate.black600,
+                          color: AppColors.black600,
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                         ),
@@ -233,7 +233,7 @@ class SignupScreen extends HookConsumerWidget {
                           TextSpan(
                             text: AppStrings.login,
                             style: context.headlineMedium!.copyWith(
-                              color: ColorPalate.primary,
+                              color: AppColors.primary,
                               fontSize: 16,
                               fontWeight: FontWeight.w700,
                             ),

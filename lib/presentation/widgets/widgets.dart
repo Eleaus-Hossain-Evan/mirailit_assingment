@@ -26,5 +26,3 @@ export 'image_pick_widget.dart';
 export 'k_drop_down_search_widget.dart';
 export 'custom_scaffold.dart';
 export 'container_bg_white.dart';
-export 'delivery_list_tail.dart';
-export 'individual_section.dart';

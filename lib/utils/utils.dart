@@ -1,5 +1,5 @@
 export 'api_routes.dart';
-export 'color_palate.dart';
+export 'app_color.dart';
 export 'custom_style.dart';
 export 'ui_constant.dart';
 export '../theme/theme.dart';

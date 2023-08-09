@@ -21,7 +21,7 @@ class KTextFormField extends HookConsumerWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.borderColor = Colors.transparent,
-    this.fillColor = ColorPalate.white,
+    this.fillColor = AppColors.white,
     this.keyboardType = TextInputType.text,
     this.validator,
     this.focusNode,
@@ -76,7 +76,7 @@ class KTextFormField extends HookConsumerWidget {
       style: GoogleFonts.openSans(
         fontWeight: FontWeight.normal,
         fontSize: 14.sp,
-        color: ColorPalate.black,
+        color: AppColors.black,
         letterSpacing: 1.2,
       ),
       obscureText: isObscure ? hideText.value : false,
@@ -177,7 +177,7 @@ class KTextFormField2 extends HookConsumerWidget {
         const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
     this.containerPadding,
     this.fillColor = Colors.transparent,
-    this.borderColor = ColorPalate.secondary200,
+    this.borderColor = AppColors.secondary200,
     this.hintTextStyle,
   }) : super(key: key);
 
@@ -205,7 +205,7 @@ class KTextFormField2 extends HookConsumerWidget {
     final border = OutlineInputBorder(
       borderRadius: BorderRadius.circular(8.r),
       borderSide: const BorderSide(
-        color: ColorPalate.black600,
+        color: AppColors.black600,
         width: 1,
       ),
     );

@@ -16,7 +16,7 @@ abstract class UITextStyle {
   static const _baseTextStyle = TextStyle(
     package: 'app_ui',
     fontWeight: AppFontWeight.regular,
-    fontFamily: 'NotoSansDisplay',
+    fontFamily: 'Gilroy',
     decoration: TextDecoration.none,
     textBaseline: TextBaseline.alphabetic,
   );
@@ -140,7 +140,7 @@ abstract class ContentTextStyle {
   static const _baseTextStyle = TextStyle(
     package: 'app_ui',
     fontWeight: AppFontWeight.regular,
-    fontFamily: 'NotoSerif',
+    fontFamily: 'Gilroy',
     decoration: TextDecoration.none,
     textBaseline: TextBaseline.alphabetic,
   );
@@ -240,7 +240,7 @@ abstract class ContentTextStyle {
 
   /// Button Text Style
   static final TextStyle button = _baseTextStyle.copyWith(
-    fontFamily: 'Montserrat',
+    fontFamily: 'Gilroy',
     fontSize: 14,
     fontWeight: AppFontWeight.medium,
     height: 1.42,
@@ -249,7 +249,7 @@ abstract class ContentTextStyle {
 
   /// Caption Text Style
   static final TextStyle caption = _baseTextStyle.copyWith(
-    fontFamily: 'NotoSansDisplay',
+    fontFamily: 'Gilroy',
     fontSize: 12,
     height: 1.33,
     letterSpacing: 0.4,
@@ -257,7 +257,7 @@ abstract class ContentTextStyle {
 
   /// Overline Text Style
   static final TextStyle overline = _baseTextStyle.copyWith(
-    fontFamily: 'NotoSansDisplay',
+    fontFamily: 'Gilroy',
     fontWeight: AppFontWeight.semiBold,
     fontSize: 12,
     height: 1.33,
@@ -266,7 +266,7 @@ abstract class ContentTextStyle {
 
   /// Label Small Text Style
   static final TextStyle labelSmall = _baseTextStyle.copyWith(
-    fontFamily: 'NotoSansDisplay',
+    fontFamily: 'Gilroy',
     fontSize: 11,
     height: 1.45,
     letterSpacing: 0.5,

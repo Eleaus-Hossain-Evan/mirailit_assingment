@@ -8,6 +8,7 @@ import 'package:flutter_easylogger/flutter_logger.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mirailit_assingment/theme/app_theme.dart';
 
 import 'application/auth/loggedin_provider.dart';
 import 'application/local_storage/storage_handler.dart';
@@ -34,10 +35,10 @@ Future<void> main() async {
     levelWarn: 5,
     levelError: 9,
     phoneVerbose: Colors.white,
-    phoneDebug: ColorPalate.success,
-    phoneInfo: ColorPalate.info,
-    phoneWarn: ColorPalate.warning,
-    phoneError: ColorPalate.error,
+    phoneDebug: AppColors.success,
+    phoneInfo: AppColors.info,
+    phoneWarn: AppColors.warning,
+    phoneError: AppColors.error,
   );
   final box = container.read(hiveProvider);
   await box.init();
@@ -48,7 +49,7 @@ Future<void> main() async {
 
   NetworkHandler.instance
     ..setup(baseUrl: APIRoute.BASE_URL, showLogs: false)
-    ..setToken(token);
+    ..setToken("token");
 
   Logger.d('token: $token');
   runApp(
@@ -121,8 +122,7 @@ class MyApp extends HookConsumerWidget {
                     ? ThemeMode.dark
                     : ThemeMode.light,
 
-            theme: MyTheme.lightTheme,
-            darkTheme: MyTheme.darkTheme,
+            theme: const AppTheme().themeData,
           ),
         );
       },

@@ -2,12 +2,6 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 
-import 'bank_account_model.dart';
-import 'charge_model.dart';
-import 'hub_model.dart';
-import 'other_account_model.dart';
-import 'shop_model.dart';
-
 class UserModel extends Equatable {
   final String id;
   final String serialId;
@@ -21,15 +15,9 @@ class UserModel extends Equatable {
   final String name;
   final String email;
   final String phone;
-  final BankAccountModel bankAccount;
-  final OthersAccountModel othersAccount;
-  final List<MyShopModel> myShops;
   final String createdAt;
   final String updatedAt;
   final bool isApproved;
-  final HubModel hub;
-  final ChargeModel regularCharge;
-  final ChargeModel returnCharge;
   final String token;
 
   const UserModel({
@@ -45,19 +33,13 @@ class UserModel extends Equatable {
     required this.name,
     required this.email,
     required this.phone,
-    required this.bankAccount,
-    required this.othersAccount,
-    required this.myShops,
     required this.createdAt,
     required this.updatedAt,
     required this.isApproved,
-    required this.hub,
-    required this.regularCharge,
-    required this.returnCharge,
     required this.token,
   });
 
-  factory UserModel.init() => UserModel(
+  factory UserModel.init() => const UserModel(
         id: '',
         serialId: '',
         address: '',
@@ -70,15 +52,9 @@ class UserModel extends Equatable {
         name: '',
         email: '',
         phone: '',
-        bankAccount: BankAccountModel.init(),
-        othersAccount: OthersAccountModel.init(),
-        myShops: const [],
         createdAt: '',
         updatedAt: '',
         isApproved: false,
-        hub: HubModel.init(),
-        regularCharge: ChargeModel.init(),
-        returnCharge: ChargeModel.init(),
         token: '',
       );
 
@@ -95,15 +71,9 @@ class UserModel extends Equatable {
     String? name,
     String? email,
     String? phone,
-    BankAccountModel? bankAccount,
-    OthersAccountModel? othersAccount,
-    List<MyShopModel>? myShops,
     String? createdAt,
     String? updatedAt,
     bool? isApproved,
-    HubModel? hub,
-    ChargeModel? regularCharge,
-    ChargeModel? returnCharge,
     String? token,
   }) {
     return UserModel(
@@ -119,22 +89,16 @@ class UserModel extends Equatable {
       name: name ?? this.name,
       email: email ?? this.email,
       phone: phone ?? this.phone,
-      bankAccount: bankAccount ?? this.bankAccount,
-      othersAccount: othersAccount ?? this.othersAccount,
-      myShops: myShops ?? this.myShops,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
       isApproved: isApproved ?? this.isApproved,
-      hub: hub ?? this.hub,
-      regularCharge: regularCharge ?? this.regularCharge,
-      returnCharge: returnCharge ?? this.returnCharge,
       token: token ?? this.token,
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
-      '_id': id,
+      'id': id,
       'serialId': serialId,
       'address': address,
       'image': image,
@@ -146,15 +110,9 @@ class UserModel extends Equatable {
       'name': name,
       'email': email,
       'phone': phone,
-      'bankAccount': bankAccount.toMap(),
-      'othersAccount': othersAccount.toMap(),
-      'myShops': myShops.map((x) => x.toMap()).toList(),
       'createdAt': createdAt,
       'updatedAt': updatedAt,
       'isApproved': isApproved,
-      'hub': hub.toMap(),
-      'regularCharge': regularCharge.toMap(),
-      'returnCharge': returnCharge.toMap(),
       'token': token,
     };
   }
@@ -167,14 +125,13 @@ class UserModel extends Equatable {
       "pickupStyle": pickupStyle,
       "defaultPayment": defaultPayment,
       "paymentStyle": paymentStyle,
-      "bankAccount": bankAccount.toMap(),
-      "othersAccount": othersAccount.toMap(),
+      
     };
   }
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
-      id: map['_id'] ?? '',
+      id: map['id'] ?? '',
       serialId: map['serialId'] ?? '',
       address: map['address'] ?? '',
       image: map['image'] ?? '',
@@ -186,24 +143,9 @@ class UserModel extends Equatable {
       name: map['name'] ?? '',
       email: map['email'] ?? '',
       phone: map['phone'] ?? '',
-      bankAccount: map['bankAccount'] != null
-          ? BankAccountModel.fromMap(map['bankAccount'])
-          : BankAccountModel.init(),
-      othersAccount: map['othersAccount'] != null
-          ? OthersAccountModel.fromMap(map['othersAccount'])
-          : OthersAccountModel.init(),
-      myShops: List<MyShopModel>.from(
-          map['myShops']?.map((x) => MyShopModel.fromMap(x)) ?? const []),
       createdAt: map['createdAt'] ?? '',
       updatedAt: map['updatedAt'] ?? '',
       isApproved: map['isApproved'] ?? false,
-      hub: map['hub'] != null ? HubModel.fromMap(map['hub']) : HubModel.init(),
-      regularCharge: map['regularCharge'] != null
-          ? ChargeModel.fromMap(map['regularCharge'])
-          : ChargeModel.init(),
-      returnCharge: map['returnCharge'] != null
-          ? ChargeModel.fromMap(map['returnCharge'])
-          : ChargeModel.init(),
       token: map['token'] ?? '',
     );
   }
@@ -215,7 +157,7 @@ class UserModel extends Equatable {
 
   @override
   String toString() {
-    return 'UserModel(_id: $id, serialId: $serialId, address: $address, image: $image, pickupStyle: $pickupStyle, defaultPayment: $defaultPayment, paymentStyle: $paymentStyle, isDisabled: $isDisabled, role: $role, name: $name, email: $email, phone: $phone, bankAccount: $bankAccount, othersAccount: $othersAccount, myShops: $myShops, createdAt: $createdAt, updatedAt: $updatedAt, isApproved: $isApproved, hub: $hub, regularCharge: $regularCharge, returnCharge: $returnCharge, token: $token)';
+    return 'UserModel(id: $id, serialId: $serialId, address: $address, image: $image, pickupStyle: $pickupStyle, defaultPayment: $defaultPayment, paymentStyle: $paymentStyle, isDisabled: $isDisabled, role: $role, name: $name, email: $email, phone: $phone, createdAt: $createdAt, updatedAt: $updatedAt, isApproved: $isApproved, token: $token)';
   }
 
   @override
@@ -233,15 +175,9 @@ class UserModel extends Equatable {
       name,
       email,
       phone,
-      bankAccount,
-      othersAccount,
-      myShops,
       createdAt,
       updatedAt,
       isApproved,
-      hub,
-      regularCharge,
-      returnCharge,
       token,
     ];
   }

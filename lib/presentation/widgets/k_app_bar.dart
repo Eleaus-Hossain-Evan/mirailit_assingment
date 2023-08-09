@@ -36,7 +36,7 @@ class KAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: centerTitle,
       automaticallyImplyLeading: automaticallyImplyLeading,
       backgroundColor: backgroundColor ?? Colors.transparent,
-      foregroundColor: ColorPalate.black,
+      foregroundColor: AppColors.black,
       leading: leading,
       title: title ??
           (titleText != null && titleText!.isNotEmpty
@@ -90,11 +90,11 @@ class KAppBarBGTransparent extends StatelessWidget
       automaticallyImplyLeading: automaticallyImplyLeading,
       backgroundColor:
           backgroundColor ?? context.theme.primaryColorLight.darken(),
-      foregroundColor: ColorPalate.white,
+      foregroundColor: AppColors.white,
       systemOverlayStyle: SystemUiOverlayStyle.light,
       leading: isLeading
           ? const CloseButton(
-              color: ColorPalate.white,
+              color: AppColors.white,
             )
           : null,
       title: title ??

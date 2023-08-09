@@ -142,7 +142,7 @@ class LoginScreen extends HookConsumerWidget {
                           AppStrings.forgotPassword,
                           style:
                               CustomTextStyle.textStyle16w600secondary.copyWith(
-                            color: ColorPalate.secondary200,
+                            color: AppColors.secondary200,
                           ),
                         ),
                         onTap: () {},

@@ -9,8 +9,6 @@ import '../../application/home/home_provider.dart';
 import '../../utils/utils.dart';
 import '../widgets/widgets.dart';
 import 'widgets/home_app_bar.dart';
-import 'widgets/search_delivery.dart';
-import 'widgets/service_section.dart';
 
 class HomeScreen extends HookConsumerWidget {
   static String route = "/home";
@@ -41,16 +39,6 @@ class HomeScreen extends HookConsumerWidget {
           child: Column(
             crossAxisAlignment: crossStart,
             children: [
-              const SearchDelivery(),
-              gap32,
-
-              //?  Services section ---------------------
-
-              "Our Services".text.lg.bold.make(),
-              gap16,
-              const ServiceSection(),
-              gap32,
-
               //?  recent parcel section ----------------
               "Recent Parcels".text.lg.bold.make(),
               gap16,
@@ -60,11 +48,12 @@ class HomeScreen extends HookConsumerWidget {
                 gap: 16,
                 padding: padding0,
                 itemBuilder: (context, index) {
-                  return const DeliveryListTile(
-                    customerName: "Evan Hossain",
-                    address:
-                        "169/B, North Konipara, Tejgoan, Dhaka, Bangladesh",
-                    distance: "3 kms",
+                  return ListTile(
+                    title: "Evan Hossain".text.make(),
+                    subtitle:
+                        "169/B, North Konipara, Tejgoan, Dhaka, Bangladesh"
+                            .text
+                            .make(),
                   );
                 },
                 itemCount: 10,

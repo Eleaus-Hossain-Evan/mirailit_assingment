@@ -8,17 +8,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../application/auth/loggedin_provider.dart';
 import '../presentation/auth/login/login.dart';
-import '../presentation/auth/reset_password/reset_password.dart';
 import '../presentation/auth/signup/signup.dart';
 import '../presentation/home/home_screen.dart';
 import '../presentation/main_nav/main_nav.dart';
-import '../presentation/notification/notification_screen.dart';
-import '../presentation/parcel/add_parcel_screen.dart';
-import '../presentation/profile/pages/bank_details_screen.dart';
-import '../presentation/profile/pages/change_password_screen.dart';
-import '../presentation/profile/pages/edit_profile/profile_detail_screen.dart';
-import '../presentation/profile/pages/html_text.dart';
-import '../presentation/profile/pages/my_shop_screen.dart';
 import '../presentation/splash/splash_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
@@ -99,65 +91,6 @@ class RouterNotifier extends ChangeNotifier {
         GoRoute(
           path: SignupScreen.route,
           builder: (context, state) => const SignupScreen(),
-        ),
-        GoRoute(
-          path: NotificationScreen.route,
-          pageBuilder: (context, state) => SlideRightToLeftTransitionPage(
-            key: state.pageKey,
-            child: const NotificationScreen(),
-          ),
-        ),
-        GoRoute(
-          path: ResetPasswordScreen.route,
-          pageBuilder: (context, state) => SlideBottomToTopTransitionPage(
-            key: state.pageKey,
-            child: const ResetPasswordScreen(),
-          ),
-        ),
-        GoRoute(
-          path: ProfileDetailScreen.route,
-          pageBuilder: (context, state) => SlideRightToLeftTransitionPage(
-            key: state.pageKey,
-            child: const ProfileDetailScreen(),
-          ),
-        ),
-        GoRoute(
-          path: MyShopScreen.route,
-          pageBuilder: (context, state) => SlideRightToLeftTransitionPage(
-            key: state.pageKey,
-            child: const MyShopScreen(),
-          ),
-        ),
-        GoRoute(
-          path: BankDetailsScreen.route,
-          pageBuilder: (context, state) => SlideRightToLeftTransitionPage(
-            key: state.pageKey,
-            child: const BankDetailsScreen(),
-          ),
-        ),
-        GoRoute(
-          path: HtmlTextScreen.route,
-          pageBuilder: (context, state) => SlideRightToLeftTransitionPage(
-            key: state.pageKey,
-            child: const HtmlTextScreen(
-              details: '',
-              title: '',
-            ),
-          ),
-        ),
-        GoRoute(
-          path: ChangePasswordScreen.route,
-          pageBuilder: (context, state) => SlideRightToLeftTransitionPage(
-            key: state.pageKey,
-            child: const ChangePasswordScreen(),
-          ),
-        ),
-        GoRoute(
-          path: AddParcelScreen.route,
-          pageBuilder: (context, state) => SlideRightToLeftTransitionPage(
-            key: state.pageKey,
-            child: const AddParcelScreen(),
-          ),
         ),
       ];
   Page<void> _errorPageBuilder(BuildContext context, GoRouterState state) =>

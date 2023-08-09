@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../utils/app_spacing.dart';
-import '../utils/app_text_style.dart';
 import '../utils/utils.dart';
 
 /// {@template app_theme}
@@ -36,6 +35,7 @@ class AppTheme {
       tabBarTheme: _tabBarTheme,
       bottomNavigationBarTheme: _bottomAppBarTheme,
       chipTheme: _chipTheme,
+      badgeTheme: _badgeTheme,
     );
   }
 
@@ -283,6 +283,12 @@ BottomNavigationBarThemeData get _bottomAppBarTheme {
 ChipThemeData get _chipTheme {
   return const ChipThemeData(
     backgroundColor: AppColors.transparent,
+  );
+}
+
+BadgeThemeData get _badgeTheme {
+  return const BadgeThemeData(
+    backgroundColor: AppColors.primary,
   );
 }
 

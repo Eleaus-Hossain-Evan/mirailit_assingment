@@ -164,6 +164,7 @@ class KTextFormField2 extends HookConsumerWidget {
     this.isLabel = true,
     this.enabled = true,
     this.onTap,
+    this.prefix,
     this.prefixIcon,
     this.validator,
     this.focusNode,
@@ -187,7 +188,7 @@ class KTextFormField2 extends HookConsumerWidget {
   final Widget? suffixIcon;
   final bool readOnly, isLabel, enabled;
   final VoidCallback? onTap;
-  final Widget? prefixIcon;
+  final Widget? prefixIcon, prefix;
   final String? Function(String?)? validator;
   final bool isObscure;
   final FocusNode? focusNode;
@@ -228,7 +229,11 @@ class KTextFormField2 extends HookConsumerWidget {
         maxLines: maxLines,
         decoration: InputDecoration(
           hintText: isLabel ? null : hintText,
-          hintStyle: hintTextStyle ?? CustomTextStyle.textStyle14w500B800,
+          hintStyle: hintTextStyle ??
+              TextStyle(
+                fontSize: 14.sp,
+                letterSpacing: -0.30000001192092896,
+              ),
           labelText: isLabel ? hintText : null,
           labelStyle: enabled
               ? CustomTextStyle.textStyle12w400B800
@@ -249,6 +254,7 @@ class KTextFormField2 extends HookConsumerWidget {
           ),
           filled: true,
           prefixIcon: prefixIcon,
+          prefix: prefix,
           suffixIcon: suffixIcon ??
               (isObscure
                   ? KInkWell(

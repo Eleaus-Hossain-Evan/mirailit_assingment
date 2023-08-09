@@ -1,7 +1,7 @@
 class AppStrings {
   AppStrings._();
 
-  static const String appName = 'Courier Delivery App';
+  static const String appName = 'MirailIT';
   static const String token = 'token';
   static const String user = 'user';
   static const String firebaseToken = 'firebaseToken';
@@ -10,30 +10,15 @@ class AppStrings {
   static const String tkSymbol = "\u{09F3}";
   static const String theme = "theme";
 
+  //#----------------  Common ----------------
+
+  static const String choiceImageSource = "Choice Image Source";
+  static const String fromCamera = "From Camera";
+  static const String fromGallery = "From Gallery";
+
   //#----------------  Home ----------------
   static const String home = "Home";
-  static String welcome(String user) => "Welcome $user";
-  static const String todayDelivery = "Today's Deliveries";
-  static const String viewAll = "View all";
-  static const String pendingDelivery = "Pending Delivery";
-  static const String cancelDelivery = "Cancel Delivery";
-  static const String completedDelivery = "Completed Delivery";
-  static const String trackingNumber = "Tracking Number";
-
-  //#----------------  Delivery ----------------
-  static const String delivery = "Delivery";
-  static const String deliverDashboard = "Delivery Dashboard";
-  static const String totalPendingOrders = "Total Pending Orders";
-  static const String shippingNumber = "Shipping Number";
-
-  //#----------------  Earning ----------------
-  static const String earning = "Earning";
-  static const String myEarnings = "My Earnings";
-  static const String totalEarnings = "Total Earnings";
-  static const String tk = "৳";
-  static const String dailyOrders = "Daily\nOrders";
-  static const String dailyEarings = "Daily\nEarnings";
-  static const String monthlyEarings = "Monthly\nEarnings";
+  static const String category = "'Category'";
 
   //#----------------  Profile ----------------
   static const String profile = "Profile";
@@ -56,9 +41,6 @@ class AppStrings {
   static const String rocketNumber = 'Rocket Number';
   static const String updateHub = "Update Hub";
   static const String support = "Support";
-  static const String choiceImageSource = "Choice Image Source";
-  static const String fromCamera = "From Camera";
-  static const String fromGallery = "From Gallery";
   static const String bankDetails = "Bank Details";
   static const String accountHolder = "Account Holder";
   static const String bankName = "Bank Name";
@@ -77,9 +59,6 @@ class AppStrings {
   static const String personalInfo = "Personal Info";
   static const String myShop = "My Shop";
 
-  //#----------------  Notification ----------------
-  static const String notifications = "Notifications";
-
   //#----------------  Auth ----------------
   static const String signUp = "Sign Up";
   static const String login = "Sign In";
@@ -97,32 +76,4 @@ class AppStrings {
       "By clicking Sign Up, you agree to our Terms of Use and our Privacy Policy.";
   static const String reTypePassword = "Re-Type Password";
   static const String notMatch = "Password doesn't match";
-
-  //#----------------  Parcel ----------------
-  static const String deliveryInformation = "Delivery Information";
-  static const String createParcel = "Create Parcel";
-  static const String description = "Description";
-  static const String cashCollection = "Cash Collection";
-  static const String category = "Category";
-  static const String selectCategory = "Select Category";
-  static const String materialType = "Material Type";
-  static const String selectMaterialType = "Select Material Type";
-  static const String productPrice = "Product Price";
-  static const String productWeight = "Product Weight";
-  static const String selectProductWeight = "Select Product Weight";
-  static const String invoiceNo = "Invoice no.";
-  static const String selectArea = "Select Area";
-  static const String selectDistrict = "Select District";
-  static const String addressInformation = "Address Information";
-  static const String customerInformation = "Customer Information";
-  static const String createNewParcel = 'Create New Parcel';
-  static const String search = "Search";
-  static const String merchantInformation = "Merchant Information";
-  static const String noShopSelected = "No Shop Selected";
-  static const String otherInformation = "Other Information";
-  static const String deliveryCharge = "Delivery Charge";
-  static const String codCharge = "COD Charge";
-  static const String weightCharge = "Weight Charge";
-  static const String trackParcel = "Track Parcel";
-  static const String createAnotherParcel = "Create Another Parcel";
 }

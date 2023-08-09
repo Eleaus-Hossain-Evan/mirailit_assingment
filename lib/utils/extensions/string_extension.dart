@@ -33,7 +33,7 @@ extension StringCasingExtension on String {
 }
 
 extension StringWidgetsExtension on String {
-  Widget assetImage({
+  Image assetImage({
     Key? key,
     AssetBundle? bundle,
     Widget Function(BuildContext, Widget, int?, bool)? frameBuilder,

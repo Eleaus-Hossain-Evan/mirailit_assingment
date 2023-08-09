@@ -30,7 +30,7 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
                 height: 24.w,
               ),
             ),
-            gap16,
+            Gap(27.w),
             Flexible(
               child: Row(
                 children: [
@@ -45,35 +45,21 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
                       color: const Color(0xff969696),
                       letterSpacing: .3,
                     ),
-                  ).expand()
-                  // .text
-                  // .medium
-                  // .size(14.sp)
-                  // .color(const Color(0xff969696))
-                  // .make()
-                  // .expand(),
-                  ,
-                  // "Search here"
-                  //     .text
-                  //     .subtitle2(context)
-                  //     .medium
-                  //     .letterSpacing(-.3)
-                  //     .color(const Color(0xff969696))
-                  //     .make(),
+                  ).expand(),
                   Images.iconVoice.assetImage(
                     width: 16.w,
                     height: 16.w,
                   ),
                 ],
               )
-                  .p(10.w)
+                  .pSymmetric(h: 10.w, v: 12)
                   .box
-                  .height(40.h)
+                  // .height(40.h)
                   .color(const Color(0xfff2f2f2))
                   .roundedSM
                   .make(),
             ),
-            gap18,
+            Gap(26.w),
             Badge(
               label: const Text("1K"),
               child: Images.iconTrophy.assetImage(
@@ -89,7 +75,7 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
           left: 16,
           right: 16,
           bottom: 8.h,
-          top: 16.h,
+          top: 12.h,
         )
         .box
         .make();

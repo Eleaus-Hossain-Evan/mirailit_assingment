@@ -9,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../application/auth/loggedin_provider.dart';
 import '../presentation/auth/login/login.dart';
 import '../presentation/auth/signup/signup.dart';
+import '../presentation/home/Image_full_view_screen.dart';
 import '../presentation/home/home_screen.dart';
 import '../presentation/main_nav/main_nav.dart';
 import '../presentation/splash/splash_screen.dart';
@@ -91,6 +92,14 @@ class RouterNotifier extends ChangeNotifier {
         GoRoute(
           path: SignupScreen.route,
           builder: (context, state) => const SignupScreen(),
+        ),
+        GoRoute(
+          path: "${ImageFullViewScreen.route}/:id",
+          pageBuilder: (context, state) => SlideRightToLeftTransitionPage(
+            child: ImageFullViewScreen(
+              initialPage: int.tryParse(state.pathParameters["id"]!) ?? 0,
+            ),
+          ),
         ),
       ];
   Page<void> _errorPageBuilder(BuildContext context, GoRouterState state) =>

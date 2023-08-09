@@ -3,6 +3,7 @@
 import 'dart:developer';
 
 import 'package:bot_toast/bot_toast.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easylogger/flutter_logger.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -25,10 +26,12 @@ Future<void> main() async {
     observers: [ProviderLog()],
   );
 
+  //  initialize the logger with custom color,
+  //  that will helping log anything anywhere in the project
   Logger.init(
-    true, // isEnable ，if production ，please false
-    isShowFile: false, // In the IDE, whether the file name is displayed
-    isShowTime: false, // In the IDE, whether the time is displayed
+    kDebugMode,
+    isShowFile: false,
+    isShowTime: false,
     levelVerbose: 247,
     levelDebug: 15,
     levelInfo: 10,
@@ -40,18 +43,25 @@ Future<void> main() async {
     phoneWarn: AppColors.warning,
     phoneError: AppColors.error,
   );
+
+  //  initialize local storage.....
   final box = container.read(hiveProvider);
   await box.init();
 
+  //  initialize the theme provider
   container.read(themeProvider);
 
+  //  read the saved token from local storage...
   final String token = box.get(AppStrings.token, defaultValue: '');
 
+  //  initialize the Network Handler class using for calling api's and setup the token....
   NetworkHandler.instance
     ..setup(baseUrl: APIRoute.BASE_URL, showLogs: false)
     ..setToken("token");
 
   Logger.d('token: $token');
+
+  //  run flutter app
   runApp(
     ProviderScope(
       parent: container,
@@ -66,30 +76,17 @@ class MyApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    //  initialize router provider
     final router = ref.watch(routerProvider);
+    //  initialize theme provider
     final appTheme = ref.watch(themeProvider);
-    final user = ref.watch(loggedInProvider.notifier).user.copyWith(
-        // myShops: [
-        //   const MyShopModel(
-        //     id: '',
-        //     shopName: "Forhad Shop - 1",
-        //     address: "address nikunjo-1, road 8, bisso road.",
-        //   ),
-        //   const MyShopModel(
-        //     id: '',
-        //     shopName: "Forhad Shop - 2",
-        //     address: "Khilkhet, road 8, bisso road.",
-        //   ),
-        // ],
-        );
+    //  read previously saved user from local storage
+    final user = ref.watch(loggedInProvider.notifier).user;
 
     useEffect(() {
       Future.wait([
+        //  set the saved user to the state
         Future.microtask(() => ref.read(authProvider.notifier).setUser(user)),
-        // Future.microtask(
-        //     () => ref.read(loggedInProvider.notifier).onAppStart()),
-        // Future.microtask(
-        //     () => ref.read(loggedInProvider.notifier).isLoggedIn()),
       ]);
 
       return null;
@@ -130,6 +127,7 @@ class MyApp extends HookConsumerWidget {
   }
 }
 
+// helping logging provider's state
 class ProviderLog extends ProviderObserver {
   @override
   void didUpdateProvider(

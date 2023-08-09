@@ -1,23 +1,25 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../../utils/api_routes.dart';
 
 class KCachedNetworkImageNoBase extends StatelessWidget {
-  const KCachedNetworkImageNoBase(
-      {Key? key,
-      required this.imageUrl,
-      this.borderRadius = const BorderRadius.all(Radius.zero),
-      this.height = 200,
-      this.width = double.infinity,
-      this.borderWidth,
-      this.fit = BoxFit.cover,
-      this.child,
-      this.padding,
-      this.margin,
-      this.borderColor})
-      : super(key: key);
+  const KCachedNetworkImageNoBase({
+    Key? key,
+    required this.imageUrl,
+    this.borderRadius = const BorderRadius.all(Radius.zero),
+    this.height = 200,
+    this.width = double.infinity,
+    this.borderWidth,
+    this.fit = BoxFit.cover,
+    this.child,
+    this.padding,
+    this.margin,
+    this.borderColor,
+    this.isHero = '',
+  }) : super(key: key);
 
   final String imageUrl;
   final BorderRadius borderRadius;
@@ -26,6 +28,7 @@ class KCachedNetworkImageNoBase extends StatelessWidget {
   final Widget? child;
   final EdgeInsetsGeometry? padding, margin;
   final Color? borderColor;
+  final String isHero;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,7 @@ class KCachedNetworkImageNoBase extends StatelessWidget {
       imageUrl: imageUrl,
       fit: fit,
       imageBuilder: (context, imageProvider) {
-        return Container(
+        final parent = Container(
           width: width ?? double.infinity,
           height: height ?? double.infinity,
           padding: padding,
@@ -52,6 +55,7 @@ class KCachedNetworkImageNoBase extends StatelessWidget {
           ),
           child: child,
         );
+        return isHero.isNotEmptyAndNotNull ? Hero(tag: imageUrl, child: parent) : parent;
       },
       height: height,
       width: width,

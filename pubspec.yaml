@@ -60,6 +60,8 @@ dependencies:
   pull_to_refresh: ^2.0.0
   velocity_x: ^4.1.1
   dropdown_search: ^5.0.6
+  card_swiper: ^3.0.1
+  photo_view: ^0.14.0
 
 dev_dependencies:
   flutter_test:
@@ -89,6 +91,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/fonts/
+    - assets/json/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -150,7 +153,6 @@ flutter:
         - asset: assets/fonts/Gilroy-ThinItalic.ttf
           weight: 100
           style: italic
-       
 
   #   - family: Trajan Pro
   #     fonts:

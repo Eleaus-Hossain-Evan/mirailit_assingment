@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:velocity_x/velocity_x.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'dart:math' as math;

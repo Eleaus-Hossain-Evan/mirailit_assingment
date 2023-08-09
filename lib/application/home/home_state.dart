@@ -1,60 +1,68 @@
 import 'package:equatable/equatable.dart';
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 
+import '../../domain/home/model/category_model.dart';
 import '../../domain/home/model/home_data.dart';
-import '../../utils/network_util/network_handler.dart';
+import '../../domain/home/model/product_model.dart';
 
 class HomeState extends Equatable {
   final bool loading;
-  final CleanFailure failure;
   final HomeData homeData;
-  final bool notification;
-  final bool chatNotification;
+  final IList<String> images;
+  final IList<CategoryModel> categories;
+  final IList<ProductModel> topProducts;
+  final IList<ProductModel> favoriteProducts;
 
   const HomeState({
     required this.loading,
-    required this.failure,
     required this.homeData,
-    required this.notification,
-    required this.chatNotification,
+    required this.images,
+    required this.categories,
+    required this.topProducts,
+    required this.favoriteProducts,
   });
 
   factory HomeState.init() => HomeState(
         loading: false,
-        failure: CleanFailure.none(),
         homeData: HomeData.init(),
-        notification: false,
-        chatNotification: false,
+        images: const IListConst([]),
+        categories: const IListConst([]),
+        topProducts: const IListConst([]),
+        favoriteProducts: const IListConst([]),
       );
 
   HomeState copyWith({
     bool? loading,
-    CleanFailure? failure,
     HomeData? homeData,
-    bool? notification,
-    bool? chatNotification,
+    IList<String>? images,
+    IList<CategoryModel>? categories,
+    IList<ProductModel>? topProducts,
+    IList<ProductModel>? favoriteProducts,
   }) {
     return HomeState(
       loading: loading ?? this.loading,
-      failure: failure ?? this.failure,
       homeData: homeData ?? this.homeData,
-      notification: notification ?? this.notification,
-      chatNotification: chatNotification ?? this.chatNotification,
+      images: images ?? this.images,
+      categories: categories ?? this.categories,
+      topProducts: topProducts ?? this.topProducts,
+      favoriteProducts: favoriteProducts ?? this.favoriteProducts,
     );
   }
 
   @override
   String toString() {
-    return 'HomeState(loading: $loading, failure: $failure, homeData: $homeData, notification: $notification, chatNotification: $chatNotification)';
+    return 'HomeState(loading: $loading, homeData: $homeData, images: $images, categories: $categories, topProducts: $topProducts, favoriteProducts: $favoriteProducts)';
   }
 
   @override
   List<Object> get props {
     return [
       loading,
-      failure,
       homeData,
-      notification,
-      chatNotification,
+      images,
+      categories,
+      topProducts,
+      favoriteProducts,
     ];
   }
 }

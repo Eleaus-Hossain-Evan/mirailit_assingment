@@ -18,7 +18,7 @@ class AppStrings {
 
   //#----------------  Home ----------------
   static const String home = "Home";
-  static const String category = "'Category'";
+  static const String category = "Category";
 
   //#----------------  Profile ----------------
   static const String profile = "Profile";

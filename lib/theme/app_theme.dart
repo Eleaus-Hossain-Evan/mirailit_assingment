@@ -36,6 +36,7 @@ class AppTheme {
       bottomNavigationBarTheme: _bottomAppBarTheme,
       chipTheme: _chipTheme,
       badgeTheme: _badgeTheme,
+      useMaterial3: true,
     );
   }
 

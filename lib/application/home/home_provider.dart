@@ -1,6 +1,8 @@
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter_easylogger/flutter_logger.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../domain/home/model/product_model.dart';
 import '../../infrastructure/home_repo.dart';
 import '../global.dart';
 import 'home_state.dart';
@@ -15,10 +17,6 @@ class HomeNotifier extends StateNotifier<HomeState> {
 
   HomeNotifier(this.repo, this.ref) : super(HomeState.init());
 
-  void removeNotificationBadge() {
-    state = state.copyWith(notification: false);
-  }
-
   void getHomeData() async {
     state = state.copyWith(loading: true);
     final result = await repo.getHomeDate();
@@ -26,10 +24,65 @@ class HomeNotifier extends StateNotifier<HomeState> {
     Logger.d("result: $result");
     result.fold(
       (l) {
-        ref.watch(snackBarProvider(l.error.message));
-        return state = state.copyWith(failure: l, loading: false);
+        showErrorToast(l.error.message);
+        return state = state.copyWith(loading: false);
       },
       (r) => state = state.copyWith(homeData: r.data, loading: false),
     );
+  }
+
+  Future<void> fetchStories() async {
+    state = state.copyWith(loading: true);
+
+    final result = await repo.fetchStories();
+
+    result.fold(
+      (l) {
+        showErrorToast(l.error.message);
+        return state = state.copyWith(loading: false);
+      },
+      (r) => state = state.copyWith(images: r.images.lock, loading: false),
+    );
+  }
+
+  Future<void> fetchCategories() async {
+    state = state.copyWith(loading: true);
+
+    final result = await repo.fetchCategories();
+
+    result.fold(
+      (l) {
+        showErrorToast(l.error.message);
+        return state = state.copyWith(loading: false);
+      },
+      (r) => state = state.copyWith(categories: r.lock, loading: false),
+    );
+  }
+
+  Future<void> fetchTapProduct() async {
+    state = state.copyWith(loading: true);
+
+    final result = await repo.fetchTapProduct();
+
+    result.fold(
+      (l) {
+        showErrorToast(l.error.message);
+        return state = state.copyWith(loading: false);
+      },
+      (r) => state = state.copyWith(topProducts: r.lock, loading: false),
+    );
+  }
+
+  void favoriteProduct(ProductModel product) {
+    final index = state.favoriteProducts.indexOf(product);
+    Logger.d('index: $index');
+    Logger.d(product);
+    if (state.favoriteProducts.contains(product)) {
+      final productList = state.favoriteProducts.remove(product);
+      state = state.copyWith(favoriteProducts: productList);
+    } else {
+      final productList = state.favoriteProducts.add(product);
+      state = state.copyWith(favoriteProducts: productList);
+    }
   }
 }

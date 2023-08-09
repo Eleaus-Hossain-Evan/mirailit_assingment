@@ -30,4 +30,8 @@ extension NumberConverter on num {
       return '${toStringAsFixed(0)} kg';
     }
   }
+
+  String get toCurrency =>
+      NumberFormat.simpleCurrency(decimalDigits: 0, locale: "ja_JP")
+          .format(this);
 }

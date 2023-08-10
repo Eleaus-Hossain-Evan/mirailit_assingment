@@ -27,7 +27,7 @@ class MainBottomNav extends StatelessWidget {
         fontWeight: AppFontWeight.bold,
       ),
       unselectedLabelStyle: TextStyle(
-        color: Colors.grey,
+        color: const Color(0xff9e9e9e),
         fontSize: 10.sp,
         fontWeight: AppFontWeight.medium,
       ),

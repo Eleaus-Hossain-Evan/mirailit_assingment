@@ -137,7 +137,6 @@ abstract class UITextStyle {
 /// Content Text Style Definitions
 abstract class ContentTextStyle {
   static const _baseTextStyle = TextStyle(
-    package: 'app_ui',
     fontWeight: AppFontWeight.regular,
     fontFamily: 'Gilroy',
     decoration: TextDecoration.none,
@@ -239,7 +238,6 @@ abstract class ContentTextStyle {
 
   /// Button Text Style
   static final TextStyle button = _baseTextStyle.copyWith(
-    fontFamily: 'Gilroy',
     fontSize: 14,
     fontWeight: AppFontWeight.medium,
     height: 1.42,
@@ -248,7 +246,6 @@ abstract class ContentTextStyle {
 
   /// Caption Text Style
   static final TextStyle caption = _baseTextStyle.copyWith(
-    fontFamily: 'Gilroy',
     fontSize: 12,
     height: 1.33,
     letterSpacing: 0.4,
@@ -256,7 +253,6 @@ abstract class ContentTextStyle {
 
   /// Overline Text Style
   static final TextStyle overline = _baseTextStyle.copyWith(
-    fontFamily: 'Gilroy',
     fontWeight: AppFontWeight.semiBold,
     fontSize: 12,
     height: 1.33,
@@ -265,7 +261,6 @@ abstract class ContentTextStyle {
 
   /// Label Small Text Style
   static final TextStyle labelSmall = _baseTextStyle.copyWith(
-    fontFamily: 'Gilroy',
     fontSize: 11,
     height: 1.45,
     letterSpacing: 0.5,

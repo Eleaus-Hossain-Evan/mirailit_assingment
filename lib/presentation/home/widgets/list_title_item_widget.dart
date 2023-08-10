@@ -24,13 +24,19 @@ class ListTitleItemWidget<T> extends StatelessWidget {
       children: [
         Row(
           children: [
-            title.text.lg.normal.letterSpacing(.5).make().expand(),
+            title.text
+                .textStyle(TextStyle(fontSize: 15.sp))
+                .bold
+                .letterSpacing(.5)
+                .make()
+                .expand(),
             Row(
               children: [
                 "See all"
                     .text
-                    .textStyle(ContentTextStyle.subtitle2)
+                    .textStyle(TextStyle(fontSize: 14.sp))
                     .color(const Color(0xff757575))
+                    .medium
                     .make(),
                 Gap(7.w),
                 Images.iconChevronRight

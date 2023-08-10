@@ -106,65 +106,67 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
 
+
+  
   fonts:
-    - family: NotoSerif
+    - family: Gilroy
       fonts:
-        - asset: assets/fonts/NotoSerif-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/NotoSerif-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/NotoSerif-Medium.ttf
+        - asset: assets/fonts/Gilroy-Regular.ttf
+        - asset: assets/fonts/Gilroy-RegularItalic.ttf
+          style: italic
+        - asset: assets/fonts/Gilroy-Medium.ttf
           weight: 500
-        - asset: assets/fonts/NotoSerif-Regular.ttf
-          weight: 400
-  # fonts:
+        - asset: assets/fonts/Gilroy-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Gilroy-ExtraBold.ttf
+          weight: 800
   #   - family: Gilroy
   #     fonts:
-  #       - asset: assets/fonts/Gilroy-Black.ttf
-  #         weight: 900
-  #       # - asset: assets/fonts/Gilroy-BlackItalic.ttf
+  #       # - asset: assets/fonts/Gilroy-Black.ttf
   #       #   weight: 900
-  #       #   style: italic
-  #       - asset: assets/fonts/Gilroy-ExtraBold.ttf
-  #         weight: 800
-  #       # - asset: assets/fonts/Gilroy-ExtraBoldItalic.ttf
+  #       # # - asset: assets/fonts/Gilroy-BlackItalic.ttf
+  #       # #   weight: 900
+  #       # #   style: italic
+  #       # - asset: assets/fonts/Gilroy-ExtraBold.ttf
   #       #   weight: 800
-  #       #   style: italic
+  #       # # - asset: assets/fonts/Gilroy-ExtraBoldItalic.ttf
+  #       # #   weight: 800
+  #       # #   style: italic
   #       - asset: assets/fonts/Gilroy-Bold.ttf
   #         weight: 700
-  #       # - asset: assets/fonts/Gilroy-BoldItalic.ttf
-  #       #   weight: 700
-  #       #   style: italic
-  #       - asset: assets/fonts/Gilroy-SemiBold.ttf
-  #         weight: 600
-  #       # - asset: assets/fonts/Gilroy-SemiBoldItalic.ttf
+  #       # # - asset: assets/fonts/Gilroy-BoldItalic.ttf
+  #       # #   weight: 700
+  #       # #   style: italic
+  #       # - asset: assets/fonts/Gilroy-SemiBold.ttf
   #       #   weight: 600
-  #       #   style: italic
+  #       # # - asset: assets/fonts/Gilroy-SemiBoldItalic.ttf
+  #       # #   weight: 600
+  #       # #   style: italic
   #       - asset: assets/fonts/Gilroy-Medium.ttf
   #         weight: 500
-  #       # - asset: assets/fonts/Gilroy-MediumItalic.ttf
-  #       #   weight: 500
-  #       #   style: italic
+  #       # # - asset: assets/fonts/Gilroy-MediumItalic.ttf
+  #       # #   weight: 500
+  #       # #   style: italic
   #       - asset: assets/fonts/Gilroy-Regular.ttf
-  #         weight: 400
-  #       # - asset: assets/fonts/Gilroy-RegularItalic.ttf
   #       #   weight: 400
-  #       #   style: italic
-  #       - asset: assets/fonts/Gilroy-Light.ttf
-  #         weight: 300
-  #       # - asset: assets/fonts/Gilroy-LightItalic.ttf
+  #       - asset: assets/fonts/Gilroy-RegularItalic.ttf
+  #       # #   weight: 400
+  #         style: italic
+  #       # - asset: assets/fonts/Gilroy-Light.ttf
   #       #   weight: 300
-  #       #   style: italic
+  #       # # - asset: assets/fonts/Gilroy-LightItalic.ttf
+  #       # #   weight: 300
+  #       # #   style: italic
   #       - asset: assets/fonts/Gilroy-UltraLight.ttf
   #         weight: 200
-  #       # - asset: assets/fonts/Gilroy-UltraLightItalic.ttf
-  #       #   weight: 200
-  #       #   style: italic
-  #       - asset: assets/fonts/Gilroy-Thin.ttf
-  #         weight: 100
-  #       # - asset: assets/fonts/Gilroy-ThinItalic.ttf
+  #       # # - asset: assets/fonts/Gilroy-UltraLightItalic.ttf
+  #       # #   weight: 200
+  #       # #   style: italic
+  #       # - asset: assets/fonts/Gilroy-Thin.ttf
   #       #   weight: 100
-  #       #   style: italic
+  #       # # - asset: assets/fonts/Gilroy-ThinItalic.ttf
+  #       # #   weight: 100
+  #       # #   style: italic
 
   #   - family: Trajan Pro
   #     fonts:

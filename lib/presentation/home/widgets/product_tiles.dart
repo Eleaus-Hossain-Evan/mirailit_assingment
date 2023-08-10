@@ -120,21 +120,18 @@ class ProductTiles extends HookConsumerWidget {
                     top: 5.h,
                     left: 5.w, // Align green container to far left
                     child: Container(
-                      width: 28.w,
-                      height: 20.h,
                       color: primaryColor.withOpacity(.10),
-                      child: Center(
-                        child: Text(
-                          '$discount%',
-                          maxLines: 2,
-                          overflow: TextOverflow.fade,
-                          style: TextStyle(
-                            color: const Color(0xFF37AD57),
-                            fontSize: 12.sp,
-                            fontWeight: AppFontWeight.bold,
-                            letterSpacing: 0.10,
-                            fontFamily: 'Gilroy',
-                          ),
+                      alignment: Alignment.center,
+                      padding: EdgeInsetsDirectional.symmetric(
+                          horizontal: 4.w, vertical: 3.h),
+                      child: Text(
+                        '$discount%',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: const Color(0xFF37AD57),
+                          fontSize: 12.sp,
+                          fontWeight: AppFontWeight.bold,
+                          height: .7,
                         ),
                       ),
                     ),
@@ -203,7 +200,7 @@ class ProductTiles extends HookConsumerWidget {
                   color: context.colors.primary,
                 ),
               ),
-              Gap(3.w),
+              Gap(5.w),
               Visibility(
                 visible: !isDiscount.value,
                 child: Text(

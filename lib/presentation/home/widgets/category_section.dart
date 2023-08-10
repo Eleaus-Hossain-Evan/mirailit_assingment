@@ -26,8 +26,9 @@ class CategorySection extends HookConsumerWidget {
             width: 129.w,
           ),
           Gap(11.h),
-          category.title.text.bold
-              .subtitle2(context)
+          category.title.text
+              .textStyle(TextStyle(fontSize: 14.sp))
+              .bold
               .color(const Color(0xff3d3c48))
               .make(),
         ],

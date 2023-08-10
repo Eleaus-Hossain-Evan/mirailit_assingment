@@ -40,13 +40,13 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
                     height: 16.w,
                   ),
                   const Gap(7),
-                  Text(
-                    "Search here",
-                    style: ContentTextStyle.subtitle2.copyWith(
-                      color: const Color(0xff969696),
-                      letterSpacing: .3,
-                    ),
-                  ).expand(),
+                  "Search here"
+                      .text
+                      .textStyle(TextStyle(fontSize: 14.sp))
+                      .normal
+                      .color(const Color(0xff969696))
+                      .make()
+                      .expand(),
                   Images.iconVoice.assetImage(
                     width: 16.w,
                     height: 16.w,

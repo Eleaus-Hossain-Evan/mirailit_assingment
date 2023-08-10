@@ -8,7 +8,6 @@ export 'k_cached_network_image.dart';
 export 'k_chip_styled_container.dart';
 export 'k_darker_bg_container.dart';
 export 'k_modal_bottom_sheet.dart';
-export 'k_user_avatar.dart';
 export 'k_expansion_tile.dart';
 export 'k_animated_icon.dart';
 export 'k_loading_scaffold.dart';

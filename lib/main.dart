@@ -6,14 +6,11 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easylogger/flutter_logger.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mirailit_assingment/theme/app_theme.dart';
 
-import 'application/auth/loggedin_provider.dart';
 import 'application/local_storage/storage_handler.dart';
-import 'application/auth/auth_provider.dart';
 import 'application/global.dart';
 import 'route/go_router.dart';
 
@@ -80,17 +77,6 @@ class MyApp extends HookConsumerWidget {
     final router = ref.watch(routerProvider);
     //  initialize theme provider
     final appTheme = ref.watch(themeProvider);
-    //  read previously saved user from local storage
-    final user = ref.watch(loggedInProvider.notifier).user;
-
-    useEffect(() {
-      Future.wait([
-        //  set the saved user to the state
-        Future.microtask(() => ref.read(authProvider.notifier).setUser(user)),
-      ]);
-
-      return null;
-    }, []);
 
     return ScreenUtilInit(
       designSize: const Size(375, 812),

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mirailit_assingment/domain/home/model/product_model.dart';
 
-import '../../../application/home/home_provider.dart';
-
 class HomeAppBarSearchDelegate extends SearchDelegate {
   final WidgetRef ref;
 

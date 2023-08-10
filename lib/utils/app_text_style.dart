@@ -14,7 +14,6 @@ import 'package:flutter/material.dart';
 /// UI Text Style Definitions
 abstract class UITextStyle {
   static const _baseTextStyle = TextStyle(
-    package: 'app_ui',
     fontWeight: AppFontWeight.regular,
     fontFamily: 'Gilroy',
     decoration: TextDecoration.none,

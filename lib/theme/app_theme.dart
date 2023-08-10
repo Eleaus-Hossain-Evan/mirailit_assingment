@@ -14,6 +14,7 @@ class AppTheme {
   /// Default `ThemeData` for App UI.
   ThemeData get themeData {
     return ThemeData(
+      fontFamily: 'Gilroy',
       primaryColor: AppColors.primary,
       canvasColor: _backgroundColor,
       scaffoldBackgroundColor: _backgroundColor,

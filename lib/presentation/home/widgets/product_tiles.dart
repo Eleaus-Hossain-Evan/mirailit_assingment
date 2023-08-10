@@ -133,6 +133,7 @@ class ProductTiles extends HookConsumerWidget {
                             fontSize: 12.sp,
                             fontWeight: AppFontWeight.bold,
                             letterSpacing: 0.10,
+                            fontFamily: 'Gilroy',
                           ),
                         ),
                       ),

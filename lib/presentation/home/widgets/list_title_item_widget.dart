@@ -24,7 +24,7 @@ class ListTitleItemWidget<T> extends StatelessWidget {
       children: [
         Row(
           children: [
-            title.text.lg.bold.make().expand(),
+            title.text.lg.normal.letterSpacing(.5).make().expand(),
             Row(
               children: [
                 "See all"

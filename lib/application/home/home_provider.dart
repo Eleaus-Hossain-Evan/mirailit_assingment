@@ -21,13 +21,12 @@ class HomeNotifier extends StateNotifier<HomeState> {
     state = state.copyWith(loading: true);
     final result = await repo.getHomeDate();
 
-    Logger.d("result: $result");
     result.fold(
       (l) {
         showErrorToast(l.error.message);
         return state = state.copyWith(loading: false);
       },
-      (r) => state = state.copyWith(homeData: r.data, loading: false),
+      (r) => state = state.copyWith(sliders: r, loading: false),
     );
   }
 
@@ -59,10 +58,10 @@ class HomeNotifier extends StateNotifier<HomeState> {
     );
   }
 
-  Future<void> fetchTapProduct() async {
+  Future<void> fetchTopProduct() async {
     state = state.copyWith(loading: true);
 
-    final result = await repo.fetchTapProduct();
+    final result = await repo.fetchTopProduct();
 
     result.fold(
       (l) {
@@ -84,5 +83,33 @@ class HomeNotifier extends StateNotifier<HomeState> {
       final productList = state.favoriteProducts.add(product);
       state = state.copyWith(favoriteProducts: productList);
     }
+  }
+
+  Future<void> fetchHotProduct() async {
+    state = state.copyWith(loading: true);
+
+    final result = await repo.fetchHotProduct();
+
+    result.fold(
+      (l) {
+        showErrorToast(l.error.message);
+        return state = state.copyWith(loading: false);
+      },
+      (r) => state = state.copyWith(hotProducts: r.lock, loading: false),
+    );
+  }
+
+  Future<void> fetchNewArrivalProduct() async {
+    state = state.copyWith(loading: true);
+
+    final result = await repo.fetchNewArrivalProduct();
+
+    result.fold(
+      (l) {
+        showErrorToast(l.error.message);
+        return state = state.copyWith(loading: false);
+      },
+      (r) => state = state.copyWith(newArrivalProducts: r.lock, loading: false),
+    );
   }
 }

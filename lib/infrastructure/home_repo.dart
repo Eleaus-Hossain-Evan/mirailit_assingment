@@ -5,20 +5,20 @@ import 'package:mirailit_assingment/utils/assets/resources.dart';
 
 import '../../utils/network_util/network_handler.dart';
 
-import '../domain/home/home_response.dart';
 import '../domain/home/model/category_model.dart';
 import '../domain/home/model/product_model.dart';
 import '../domain/home/story_response.dart';
-import '../utils/api_routes.dart';
 
 class HomeRepo {
   final api = NetworkHandler.instance;
 
-  Future<Either<CleanFailure, HomeResponse>> getHomeDate() async {
-    return await api.get(
-      fromData: (json) => HomeResponse.fromMap(json),
-      endPoint: APIRoute.HOME,
-      withToken: false,
+  Future<Either<CleanFailure, List<String>>> getHomeDate() async {
+    return right(
+      [
+        Images.banner1,
+        Images.banner2,
+        Images.banner3,
+      ],
     );
   }
 
@@ -66,7 +66,7 @@ class HomeRepo {
     );
   }
 
-  Future<Either<CleanFailure, List<ProductModel>>> fetchTapProduct() async {
+  Future<Either<CleanFailure, List<ProductModel>>> fetchTopProduct() async {
     return right([
       const ProductModel(
         image: Images.product1,
@@ -91,6 +91,65 @@ class HomeRepo {
         price: 890,
         discountPrice: 650,
         discount: 27,
+      ),
+    ]);
+  }
+
+  Future<Either<CleanFailure, List<ProductModel>>> fetchHotProduct() async {
+    return right([
+      const ProductModel(
+        image: Images.hotProduct1,
+        title: "Haldiram’s Methi Crispy Puffs",
+        weight: '200gm',
+        price: 250,
+        discountPrice: 0,
+        discount: 0,
+      ),
+      const ProductModel(
+        image: Images.hotProduct2,
+        title: "Current Cheese Ball",
+        weight: '100gm',
+        price: 180,
+        discountPrice: 0,
+        discount: 0,
+      ),
+      const ProductModel(
+        image: Images.hotProduct3,
+        title: "Instant Rice Noodles Vifon",
+        weight: '1kg',
+        price: 115,
+        discountPrice: 98,
+        discount: 12,
+      ),
+    ]);
+  }
+
+  Future<Either<CleanFailure, List<ProductModel>>>
+      fetchNewArrivalProduct() async {
+    return right([
+      const ProductModel(
+        image: Images.newArrivalProduct1,
+        title: "Finest Pomegra-nate Juice",
+        weight: '2ltr',
+        price: 550,
+        discountPrice: 0,
+        discount: 0,
+      ),
+      const ProductModel(
+        image: Images.newArrivalProduct2,
+        title: "Shan Punjabi Yakhni Pilau",
+        weight: '50g',
+        price: 190,
+        discountPrice: 0,
+        discount: 0,
+      ),
+      const ProductModel(
+        image: Images.newArrivalProduct3,
+        title: "Aci Pure Suji (500g)",
+        weight: '0.5kg',
+        price: 250,
+        discountPrice: 0,
+        discount: 0,
       ),
     ]);
   }

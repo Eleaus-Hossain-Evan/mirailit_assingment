@@ -6,6 +6,7 @@ import 'package:velocity_x/velocity_x.dart';
 import 'package:mirailit_assingment/presentation/widgets/k_inkwell.dart';
 
 import '../../../utils/utils.dart';
+import 'home_appbar_search_delegate.dart';
 
 class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
   const HomeAppBar({
@@ -57,7 +58,13 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
                   // .height(40.h)
                   .color(const Color(0xfff2f2f2))
                   .roundedSM
-                  .make(),
+                  .make()
+                  .onInkTap(() {
+                showSearch(
+                  context: context,
+                  delegate: HomeAppBarSearchDelegate(ref),
+                );
+              }),
             ),
             Gap(26.w),
             Badge(

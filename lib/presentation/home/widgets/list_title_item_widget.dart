@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mirailit_assingment/domain/home/model/product_model.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../../utils/utils.dart';
@@ -40,7 +41,7 @@ class ListTitleItemWidget<T> extends StatelessWidget {
         ).pSymmetric(h: 25.w),
         gap10,
         SizedBox(
-          height: 142.h,
+          height: T == ProductModel ? 205.h : 142.h,
           child: KListViewSeparated(
             scrollDirection: Axis.horizontal,
             padding: paddingLeft24,

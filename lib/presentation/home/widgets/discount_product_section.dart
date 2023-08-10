@@ -17,7 +17,7 @@ class DiscountProductSection extends HookConsumerWidget {
   Widget build(BuildContext context, ref) {
     final state = ref.watch(homeProvider);
     return SizedBox(
-      height: 198.h,
+      height: 205.h,
       child: KListViewSeparated(
         scrollDirection: Axis.horizontal,
         padding: paddingLeft24,
